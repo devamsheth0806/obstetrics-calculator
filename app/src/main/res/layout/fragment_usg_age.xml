@@ -1,0 +1,160 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:tag="layout/fragment_usg_age_0"
+        tools:context=".USGAge">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/usg_age"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:chainUseRtl="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/usgConstraintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+                app:layout_constraintEnd_toEndOf="0"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toTopOf="0">
+
+                <TextView
+                    android:id="@+id/usgDateTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/old_usg_date"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="0"
+                    app:layout_constraintEnd_toStartOf="@+id/editUSGDate"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="0"
+                    app:layout_constraintTop_toTopOf="0" />
+
+                <DatePicker
+                    android:id="@+id/editUSGDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:calendarViewShown="false"
+                    android:datePickerMode="spinner"
+                    android:elegantTextHeight="true"
+                    android:ems="10"
+                    android:hint="@string/usg_date"
+                    app:layout_constraintBottom_toBottomOf="0"
+                    app:layout_constraintEnd_toEndOf="0"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/usgDateTextView"
+                    app:layout_constraintTop_toTopOf="0" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/calculate_usg_button"
+                app:layout_constraintEnd_toEndOf="0"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/usgConstraintLayout"
+                app:layout_constraintVertical_chainStyle="spread">
+
+                <TextView
+                    android:id="@+id/ageTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Age at old USG date:"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="0"
+                    app:layout_constraintHorizontal_bias="0.153"
+                    app:layout_constraintStart_toStartOf="0"
+                    app:layout_constraintTop_toTopOf="0" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Weeks"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toTopOf="@+id/daysAgeTextView"
+                    app:layout_constraintEnd_toStartOf="@+id/editWeeksAge"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="0"
+                    app:layout_constraintTop_toBottomOf="@+id/ageTextView" />
+
+                <EditText
+                    android:id="@+id/editWeeksAge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/edit_weeks_age"
+                    android:inputType="number"
+                    android:minHeight="48dp"
+                    android:padding="5dp"
+                    android:paddingVertical="5dp"
+                    app:layout_constraintBottom_toTopOf="@+id/editDaysAge"
+                    app:layout_constraintEnd_toEndOf="@+id/editDaysAge"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/textView10"
+                    app:layout_constraintStart_toStartOf="@+id/editDaysAge"
+                    app:layout_constraintTop_toBottomOf="@+id/ageTextView"
+                    app:layout_constraintVertical_chainStyle="spread" />
+
+                <TextView
+                    android:id="@+id/daysAgeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Days"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="0"
+                    app:layout_constraintEnd_toStartOf="@+id/editDaysAge"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="0"
+                    app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+                <EditText
+                    android:id="@+id/editDaysAge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:ems="10"
+                    android:hint="@string/edit_days_age"
+                    android:inputType="number"
+                    android:minHeight="48dp"
+                    android:padding="5dp"
+                    app:layout_constraintBottom_toBottomOf="0"
+                    app:layout_constraintEnd_toEndOf="0"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/daysAgeTextView"
+                    app:layout_constraintTop_toBottomOf="@+id/editWeeksAge" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/usgAgeResultView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="0"
+                app:layout_constraintEnd_toEndOf="0"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/calculate_usg_button" />
+
+            <Button
+                android:id="@+id/calculate_usg_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Calculate"
+                app:layout_constraintBottom_toTopOf="@+id/usgAgeResultView"
+                app:layout_constraintEnd_toEndOf="0"
+                app:layout_constraintHorizontal_bias="0.503"
+                app:layout_constraintStart_toStartOf="0"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
